@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 95vw;
+      height: 95vh;
+      background-color: aquamarine;
+      margin: 0 auto;
+      display: flex;
+      /* align-content: stretch; */
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .cards__container {
+      width: 80%;
+      height: 80%;
+      background-color: azure;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      height: 200px;
+      background-color: bisque;
+
+      flex: 0 0 200px;
+    }
+
+    .card:not(:last-child) {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cards__container">
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+  </div>
+</body>
+</html>
