@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      .wrap {
+        overflow: hidden;
+      }
+
+      .carousel {
+        display: flex;
+        left: -100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+      }
+
+      .carousel-seat {
+        background: #ddd;
+        flex: 1 0 100%;
+        order: 2;
+      }
+      .carousel-seat:nth-child(even) {
+        background: #d5d5d5;
+      }
+
+      .carousel-seat.is-ref {
+        order: 1;
+      }
+
+      h2 {
+        color: #aaa;
+        font-size: 7em;
+        font-weight: normal;
+        margin: 0;
+        padding: 0.6em 0;
+        text-align: center;
+      }
+
+      .controls {
+        padding: 2em;
+        text-align: center;
+      }
+      .controls button {
+        background: #aaa;
+        border: 0;
+        border-radius: 0.25em;
+        color: #eee;
+        padding: 0.5em 1em;
+      }
+      .controls button:hover, .controls button:focus {
+        background: magenta;
+      }
+  </style>
+</head>
+<body>
+  <div class='wrap'>
+    <ul class='carousel'>
+      <li class='carousel-seat'>
+        <h2>1</h2>
+      </li>
+      <li class='carousel-seat'>
+        <h2>2</h2>
+      </li>
+      <li class='carousel-seat'>
+        <h2>3</h2>
+      </li>
+      <li class='carousel-seat'>
+        <h2>4</h2>
+      </li>
+      <li class='carousel-seat'>
+        <h2>5</h2>
+      </li>
+      <li class='carousel-seat is-ref'>
+        <h2>6</h2>
+      </li>
+    </ul>
+  </div>
+  <div class='controls'>
+    <button class='toggle'>Next</button>
+  </div>
+</body>
+</html>
