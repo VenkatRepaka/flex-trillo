@@ -83,5 +83,22 @@
   <div class='controls'>
     <button class='toggle'>Next</button>
   </div>
+  <script>
+    let carousel = document.querySelector('.carousel');
+    let seats = document.querySelectorAll('.carousel-seat');
+
+
+
+    next = (el) => el.nextElementSibling ? el.nextElementSibling : seats.item(0);
+
+    function toggle() {
+      let el = document.querySelector('.is-ref');
+      el.classList.remove("is-ref");
+      console.log(el);
+      let new_seat = next(el);
+      console.log(new_seat);
+      new_seat.classList.add('is-ref');
+    }
+  </script>
 </body>
 </html>
