@@ -1,0 +1,105 @@
+:root {
+  --pad: 50px;
+  --pad-neg: -50px;
+}
+
+* {
+  margin: 0;
+  padding: 0; 
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  left: -100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transform: translateX(100%);
+  backface-visibility: hidden;
+}
+
+@media (min-width: 30em) {
+  .carousel {
+    left: -50%;
+    transform: translateX(50%);
+  }
+}
+@media (min-width: 40em) {
+  .carousel {
+    left: -33.33333%;
+    transform: translateX(33.33333%) translateX(-100px);
+  }
+}
+
+.carousel.is-set {
+  transform: translateX(5px);
+  /* transform: none; */
+  /* transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1); */
+  transition: transform 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.carousel-seat {
+  /* background: #ddd; */
+  flex: 1 0 100%;
+  order: 2;
+  /* padding-right: var(--pad); */
+  /* margin-right: 10px; */
+  backface-visibility: hidden;
+}
+.carousel-seat:nth-child(even) {
+  /* background: #d5d5d5; */
+}
+
+@media (min-width: 30em) {
+  .carousel-seat {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 40em) {
+  .carousel-seat {
+    flex-basis: 33.33333%;
+  }
+}
+
+.carousel-seat.is-ref {
+  order: 1;
+}
+
+h2 {
+  color: #aaa;
+  font-size: 7em;
+  font-weight: normal;
+  margin: 0;
+  padding: 0.6em 0;
+  text-align: center;
+}
+
+.controls {
+  padding: 2em;
+  text-align: center;
+}
+.controls button {
+  background: #aaa;
+  border: 0;
+  border-radius: 0.25em;
+  color: #eee;
+  padding: 0.5em 1em;
+}
+.controls button:hover, .controls button:focus {
+  background: magenta;
+}
+
+.inner-div {
+  background-color: cyan;
+  margin-right: 10px;
+}

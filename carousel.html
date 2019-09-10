@@ -5,100 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <style>
-      .wrap {
-        overflow: hidden;
-      }
-
-      .carousel {
-        display: flex;
-        left: -100%;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        position: relative;
-      }
-
-      .carousel-seat {
-        background: #ddd;
-        flex: 1 0 100%;
-        order: 2;
-      }
-      .carousel-seat:nth-child(even) {
-        background: #d5d5d5;
-      }
-
-      .carousel-seat.is-ref {
-        order: 1;
-      }
-
-      h2 {
-        color: #aaa;
-        font-size: 7em;
-        font-weight: normal;
-        margin: 0;
-        padding: 0.6em 0;
-        text-align: center;
-      }
-
-      .controls {
-        padding: 2em;
-        text-align: center;
-      }
-      .controls button {
-        background: #aaa;
-        border: 0;
-        border-radius: 0.25em;
-        color: #eee;
-        padding: 0.5em 1em;
-      }
-      .controls button:hover, .controls button:focus {
-        background: magenta;
-      }
-  </style>
+  <link rel="stylesheet" href="carousel/style.css">
 </head>
 <body>
   <div class='wrap'>
-    <ul class='carousel'>
+    <ul class='carousel is-set'>
       <li class='carousel-seat'>
-        <h2>1</h2>
+        <div class="inner-div">
+          <h2>1</h2>
+        </div>
       </li>
       <li class='carousel-seat'>
-        <h2>2</h2>
+        <div class="inner-div">
+          <h2>2</h2>
+        </div>
       </li>
       <li class='carousel-seat'>
-        <h2>3</h2>
+        <div class="inner-div">
+          <h2>3</h2>
+        </div>
       </li>
       <li class='carousel-seat'>
-        <h2>4</h2>
+        <div class="inner-div">
+          <h2>4</h2>
+        </div>
       </li>
       <li class='carousel-seat'>
-        <h2>5</h2>
+        <div class="inner-div">
+          <h2>5</h2>
+        </div>
       </li>
       <li class='carousel-seat is-ref'>
-        <h2>6</h2>
+        <div class="inner-div">
+          <h2>6</h2>
+        </div>
       </li>
     </ul>
   </div>
   <div class='controls'>
-    <button class='toggle'>Next</button>
+    <button class='toggle' onclick="toggle()">Next</button>
   </div>
-  <script>
-    let carousel = document.querySelector('.carousel');
-    let seats = document.querySelectorAll('.carousel-seat');
-
-
-
-    next = (el) => el.nextElementSibling ? el.nextElementSibling : seats.item(0);
-
-    function toggle() {
-      let el = document.querySelector('.is-ref');
-      el.classList.remove("is-ref");
-      console.log(el);
-      let new_seat = next(el);
-      console.log(new_seat);
-      new_seat.classList.add('is-ref');
-    }
-  </script>
+  <script src="carousel/script.js"></script>
 </body>
 </html>
